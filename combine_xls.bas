@@ -37,7 +37,7 @@ Sub combine_spread_sheets()
                         ws.UsedRange.Copy o_ws.Range("A1")
                     Else
                         no_of_rows = row_count(ws)
-                        no_of_columns = column_count(ws, ws.UsedRange.row) ' To DO Remove the row Parameter
+                        no_of_columns = ws.UsedRange.column 'column_count(ws)
                         last_column = column_index_to_name(no_of_columns)
                         ws.Range("A2:" & last_column & no_of_rows).Copy o_ws.Range("A" & CStr(o_no_of_rows + 1))
                     End If
